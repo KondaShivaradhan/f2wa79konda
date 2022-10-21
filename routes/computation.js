@@ -6,9 +6,11 @@ var router = express.Router();
 32. Math.tanh()
 33. Math.trunc()
 /* GET Bonus page. */
-var random = Math.floor(Math.random)
+
 router.get('/', function(req, res, next) {
-    res.render('computation', { title: 'Bonus', heading: 'Computation' });
+    rand = Math.floor(Math.random() * 360);
+    result = `Math.sign() applied to ${rand} is ${Math.sign(rand)} `
+    res.render('computation', { title: 'Bonus', heading: 'Computation', output: result });
 });
 
 module.exports = router;
