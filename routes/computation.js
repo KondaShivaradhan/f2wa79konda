@@ -2,11 +2,6 @@ var express = require('express');
 var router = express.Router();
 const url = require('url');
 const querystring = require('querystring');
-/*
-30. Math.pow()
-31. Math.sign()
-32. Math.tanh()
-33. Math.trunc()
 /* GET Bonus page. */
 router.get('/', function(req, res, next) {
     link = url.parse(req.url)
@@ -16,11 +11,15 @@ router.get('/', function(req, res, next) {
     console.log(x);
     if (x) {
         console.log(" X value is " + x);
-        result = `Math.sign() applied to ${x} is ${Math.sign(x)} `
+        result = `Math.sign() applied to ${x} is ${Math.sign(x)} ||  
+        Math.tanh() applied to ${x} is ${Math.tanh(x)} || 
+        Math.trunc() applied to ${x} is ${Math.trunc(x)} `
         res.render('computation', { title: 'Bonus', heading: 'Computation', output: result })
     } else {
         rand = Math.floor(Math.random() * 360);
-        result = `Math.sign() applied to ${rand} is ${Math.sign(rand)} `
+        result = `Math.sign() applied to ${rand} is ${Math.sign(rand)} ||  
+        Math.tanh() applied to ${rand} is ${Math.tanh(rand)} || 
+        Math.trunc() applied to ${rand} is ${Math.trunc(rand)} `
         res.render('computation', { title: 'Bonus', heading: 'Computation', output: result });
     }
 
